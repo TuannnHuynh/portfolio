@@ -1,4 +1,5 @@
 import aboutImg from "../assets/avento.gif";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -6,14 +7,23 @@ const About = () => {
       <h2 className="my-20 text-center text-5xl">
         About <span className="text-neutral-500">Me</span>
       </h2>
-      <div className="flex flex-wrap items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between md:justify-center lg:pb-10">
         <div className="w-full px-4 lg:w-[45%] lg:p-8">
-          <div>
-            <img className="rounded-2xl" src={aboutImg} />
-          </div>
+          <motion.img
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -140 }}
+            transition={{ duration: 1.2 }}
+            className="rounded-2xl lg:h-[370px] lg:w-11/12"
+            src={aboutImg}
+          />
         </div>
-        <div className="w-full px-4 lg:w-[50%] lg:p-8">
-          <p className="my-2 max-w-xl py-6 text-justify text-xl -tracking-[.06em] sm:tracking-widest">
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 140 }}
+          transition={{ duration: 1.2 }}
+          className="w-full px-4 lg:w-1/2 lg:p-8"
+        >
+          <p className="my-2 max-w-2xl py-6 text-justify text-xl -tracking-[.08em] sm:tracking-widest lg:max-w-xl">
             I am a passionate and detail-oriented{" "}
             <span className="font-medium text-emerald-500">
               Front-End Developer
@@ -34,7 +44,7 @@ const About = () => {
             apply my skills in a dynamic work environment and further develop my
             expertise.
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
