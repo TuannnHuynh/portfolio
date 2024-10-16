@@ -7,3 +7,16 @@
 :root {
   font-family: "Inter", sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 2px;
+}
